@@ -1,1 +1,1 @@
-web: gunicorn afro_project.wsgi --log-file -
+web: gunicorn afro.wsgi --log-file -
