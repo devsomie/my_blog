@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-4&yx9p(99@nx%5fwqlz7*tllid#sz$b&git(yn9z(%3sa9wg!f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.heroku.com', 'localhost','127.0.0.1']
+ALLOWED_HOSTS = ['afronewshub.heroku.com', 'localhost','127.0.0.1']
 
 
 # Application definition
