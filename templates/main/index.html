@@ -1,0 +1,71 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<main class="container d-flex justify-content-between flex-wrap mt-3">
+  <div class="d-flex justify-content-around flex-wrap col-md-8">
+    
+    {% for post in posts %}
+    <div class="card col-md-5 mt-3 shadow" style="max-width: 540px">
+      <div class=" g-0">
+        <div class="card-header ">{{post.category}}</div>
+        <div class="col-md-12">
+          <img src="{{post.image.url}}" alt="{{post.category}}"
+            class="img-fluid" style="height: 100%;width: 100%;" />
+        </div>
+        <div class="col-md-12">
+          <div class="card-body">
+            <h6 class="card-title"><i class="far fa-calendar-alt"></i>{{post.date_added}}</span></h6>
+            <p class="card-text">
+              {{ post.intro }}
+            </p>
+            <a href="{% url 'post' post.slug %}" class="btn btn-sm" style="background-color: orangered; color: white;">Read more</a>
+            <p class="card-text">
+              <small class="text-muted"></small>
+            </p>
+
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    {% endfor %}
+    
+       <!--Pagination-->
+       <!-- <div class="container p-4">
+        <div class="pagination justify-content-center">
+            <span class="step-links">
+              {% if posts.has_previous %}
+                  <a href="?page=1">&laquo; first</a>
+                  <a href="?page={{ posts.previous_page_number }}">previous</a>
+              {% endif %}
+
+                <span class="current">
+                    Page {{ movies.number }} of {{ movies.paginator.num_pages }}
+                </span>
+
+              {% if movies.has_next %}
+                  <a href="?page={{ posts.next_page_number }}">next</a>
+                  <a href="?page={{ posts.paginator.num_pages }}">last &raquo;</a>
+              {% endif %}
+            </span>
+            </div>
+        </div> -->
+      <!--end of Pagination-->
+   
+  </div>
+
+  <!--Right container-->
+<div class="d-flex col-md-4 justify-content-center">
+    <!--Ad space-->
+    <div class="bg-image col-md-11 border  mt-3 rounded shadow">
+      <div class="card-header">AD SPACE</div>
+      <img class="img-fluid" src="img/sam-moqadam-ZxRHv6epgMQ-unsplash.jpg">
+</div>
+</div>
+
+</main>
+
+{% endblock %}

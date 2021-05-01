@@ -1,0 +1,42 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+
+ 
+
+  <main class="container d-flex justify-content-center flex-column flex-wrap mt-3">
+    
+     <div class="card">
+         <h5 class="card-header text-center">TODAY'S PICKS</h5>
+     </div>
+     <div>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Teams</th>
+                <th scope="col">Tip</th>
+                <th scope="col">Odd</th>
+              </tr>
+            </thead>
+            
+            <tbody>
+              <tr>
+                  {% for prediction in predictions %}
+                <td>{{ prediction.teams }}</td>
+                <td>{{ prediction.tip }}</td>
+                <td>{{ prediction.odd }}</td>
+                   {% endfor %}
+              </tr>
+             
+            
+            </tbody>
+           
+          </table>
+     </div>
+    
+     
+
+  </main>
+
+ {% endblock %}
